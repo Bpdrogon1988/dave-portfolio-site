@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dave Jones | DevOps Engineer & Software Architect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Dave Jones – DevOps engineer, software architect, and founder of Lockersoft. Specializing in CI/CD, cloud infrastructure, and large-scale web applications.">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="scripts.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-container">
+    <div class="brand">
+      <a href="index.html" class="brand-link">
+        <span class="brand-logo">DJ</span>
+        <span class="brand-text">
+          <span class="brand-name">Dave Jones</span>
+          <span class="brand-tagline">DevOps Engineer & Software Architect</span>
+        </span>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+
+    <nav class="nav" id="mainNav">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-divider"></li>
+        <li><a href="project1.html">CI/CD Platform</a></li>
+        <li><a href="project2.html">Observability Suite</a></li>
+        <li><a href="project3.html">IaC Migration</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Building Reliable Systems with DevOps Discipline</h1>
+        <p>
+          I’m Dave Jones, a DevOps-focused software architect who has spent decades
+          building and scaling web platforms, online communities, and enterprise systems.
+          I help teams ship faster, safer, and with confidence.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View DevOps Projects</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+        <div class="hero-meta">
+          <span>GitHub: <a href="https://github.com/lockersoft" target="_blank" rel="noopener">lockersoft</a></span>
+          <span>Twitter/X: <a href="https://twitter.com/lockersoft" target="_blank" rel="noopener">@lockersoft</a></span>
+          <span>LinkedIn: <a href="https://www.linkedin.com/in/lockersoft" target="_blank" rel="noopener">lockersoft</a></span>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-card">
+          <h2>Core DevOps Focus</h2>
+          <ul class="hero-list">
+            <li>CI/CD pipelines (GitHub Actions, Jenkins)</li>
+            <li>Cloud platforms (AWS, Azure)</li>
+            <li>Containers & Orchestration (Docker, Kubernetes)</li>
+            <li>Infrastructure as Code (Terraform, CloudFormation)</li>
+            <li>Monitoring & Observability (Prometheus, Grafana, ELK)</li>
+          </ul>
+          <a href="https://www.lockersoft.com" class="hero-link" target="_blank" rel="noopener">
+            Visit Lockersoft.com →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+
+<main>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container section-grid">
+      <div>
+        <h2>About Me</h2>
+        <p>
+          I’m a senior software engineer and architect with decades of experience
+          delivering web applications and online community platforms for hundreds
+          of organizations across industries. My work spans software development,
+          technology management, and engineering leadership.
+        </p>
+        <p>
+          Over the years, I’ve shifted increasingly toward DevOps: treating
+          infrastructure as code, building reliable CI/CD pipelines, and enabling
+          teams to move quickly without sacrificing stability. I enjoy teaching,
+          mentoring, and translating complex technical concepts into practical,
+          real-world solutions.
+        </p>
+      </div>
+      <div>
+        <h3>DevOps & Engineering Skills</h3>
+        <div class="chips">
+          <span class="chip">CI/CD Pipelines</span>
+          <span class="chip">GitHub Actions</span>
+          <span class="chip">Jenkins</span>
+          <span class="chip">Docker</span>
+          <span class="chip">Kubernetes</span>
+          <span class="chip">AWS</span>
+          <span class="chip">Azure</span>
+          <span class="chip">Infrastructure as Code</span>
+          <span class="chip">Terraform</span>
+          <span class="chip">CloudFormation</span>
+          <span class="chip">Monitoring & Logging</span>
+          <span class="chip">Prometheus / Grafana</span>
+          <span class="chip">ELK Stack</span>
+          <span class="chip">Linux</span>
+          <span class="chip">Automation</span>
+          <span class="chip">Scaling & High Availability</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Selected DevOps Projects</h2>
+        <p>
+          A sampling of projects where I’ve helped teams improve reliability,
+          automate delivery, and modernize their infrastructure.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>Cloud-Native CI/CD Platform</h3>
+          <p>
+            Migrated a legacy deployment process to a fully automated CI/CD platform,
+            reducing release time from days to minutes and improving deployment safety.
+          </p>
+          <ul class="project-meta">
+            <li><strong>Focus:</strong> CI/CD, blue-green deployments, rollback</li>
+            <li><strong>Stack:</strong> GitHub Actions, Docker, Kubernetes, Helm, AWS</li>
+          </ul>
+          <a href="project1.html" class="project-link">View Case Study →</a>
+        </article>
+
+        <article class="project-card">
+          <h3>Unified Observability for a Global Platform</h3>
+          <p>
+            Built a centralized observability stack for a distributed web application,
+            enabling clear SLOs and faster incident response across teams and regions.
+          </p>
+          <ul class="project-meta">
+            <li><strong>Focus:</strong> Monitoring, alerting, SLOs</li>
+            <li><strong>Stack:</strong> Prometheus, Grafana, Loki/ELK, Alertmanager</li>
+          </ul>
+          <a href="project2.html" class="project-link">View Case Study →</a>
+        </article>
+
+        <article class="project-card">
+          <h3>Infrastructure as Code Migration</h3>
+          <p>
+            Rebuilt a manually managed environment using Terraform and modular
+            infrastructure-as-code, standardizing environments and reducing drift.
+          </p>
+          <ul class="project-meta">
+            <li><strong>Focus:</strong> IaC, environment parity, automation</li>
+            <li><strong>Stack:</strong> Terraform, AWS, Linux, GitOps workflows</li>
+          </ul>
+          <a href="project3.html" class="project-link">View Case Study →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container contact-grid">
+      <div>
+        <h2>Contact</h2>
+        <p>
+          Interested in consulting, collaboration, or speaking? I’m always open
+          to engaging with teams that care about reliability, performance, and
+          long-term maintainability.
+        </p>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> <a href="mailto:dave@lockersoft.com">dave@lockersoft.com</a></li>
+          <li><strong>Website:</strong> <a href="https://www.lockersoft.com" target="_blank" rel="noopener">lockersoft.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Social</h3>
+        <ul class="social-links">
+          <li>
+            <a href="https://github.com/lockersoft" target="_blank" rel="noopener">
+              GitHub <span>@lockersoft</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/lockersoft" target="_blank" rel="noopener">
+              Twitter/X <span>@lockersoft</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/lockersoft" target="_blank" rel="noopener">
+              LinkedIn <span>lockersoft</span>
+            </a>
+          </li>
+        </ul>
+        <p class="contact-note">
+          You can also reach me through my <a href="https://www.lockersoft.com" target="_blank" rel="noopener">Lockersoft</a>
+          site’s contact options.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <p>© <span id="year"></span> Dave Jones · Lockersoft LLC</p>
+    <p class="footer-links">
+      <a href="https://www.lockersoft.com" target="_blank" rel="noopener">lockersoft.com</a>
+      <span class="dot">•</span>
+      <a href="mailto:dave@lockersoft.com">dave@lockersoft.com</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Infrastructure as Code Migration | Dave Jones</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="DevOps project: Infrastructure-as-code migration led by Dave Jones using Terraform and GitOps workflows to standardize cloud environments.">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="scripts.js"></script>
+</head>
+<body>
+<header class="site-header inner-header">
+  <div class="container nav-container">
+    <div class="brand">
+      <a href="index.html" class="brand-link">
+        <span class="brand-logo">DJ</span>
+        <span class="brand-text">
+          <span class="brand-name">Dave Jones</span>
+          <span class="brand-tagline">DevOps Engineer & Software Architect</span>
+        </span>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+
+    <nav class="nav" id="mainNav">
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li class="nav-divider"></li>
+        <li><a href="project1.html">CI/CD Platform</a></li>
+        <li><a href="project2.html">Observability Suite</a></li>
+        <li><a href="project3.html" class="active">IaC Migration</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="project-hero">
+    <!-- Replace src with a real image path, e.g. images/project3-iac.jpg -->
+    <img src="images/project3-iac.jpg"
+         alt="Infrastructure as code architecture diagram"
+         class="project-hero-image">
+    <div class="project-hero-overlay">
+      <div class="container">
+        <h1>Infrastructure as Code Migration</h1>
+        <p>
+          Converting hand-built environments into repeatable, version-controlled
+          infrastructure managed entirely as code.
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container project-layout">
+      <article>
+        <h2>Overview</h2>
+        <p>
+          As applications grew and environments multiplied, manually configured
+          infrastructure became a bottleneck. Drift between environments caused
+          surprises during releases, and recreating a system from scratch was
+          slow and error-prone.
+        </p>
+
+        <h2>Objectives</h2>
+        <ul>
+          <li>Represent all critical infrastructure as version-controlled code.</li>
+          <li>Standardize environments across development, staging, and production.</li>
+          <li>Shorten the time required to provision and update infrastructure.</li>
+          <li>Enable safe, auditable changes to cloud resources.</li>
+        </ul>
+
+        <h2>Solution</h2>
+        <p>
+          I led a staged migration to Terraform, starting with foundational
+          networking (VPCs, subnets, gateways) and expanding to databases,
+          caches, application tiers, and supporting services. The configuration
+          was organized into reusable modules and environment definitions.
+        </p>
+        <p>
+          A GitOps-style workflow ensured all infrastructure changes flowed
+          through pull requests and automated pipelines, with plans reviewed
+          before apply. Documentation captured how each environment was built
+          and how to spin up new ones.
+        </p>
+
+        <h2>Key Responsibilities</h2>
+        <ul>
+          <li>Designed the Terraform module structure and state management strategy.</li>
+          <li>Implemented core networking and application infrastructure modules.</li>
+          <li>Integrated Terraform into CI/CD with plan/apply workflows.</li>
+          <li>Guided teams in migrating existing resources into managed code.</li>
+          <li>Documented standards for naming, tagging, and access control.</li>
+        </ul>
+
+        <h2>Impact</h2>
+        <ul>
+          <li>Environment provisioning time reduced from weeks to hours.</li>
+          <li>Clear audit trail for all infrastructure changes via Git history.</li>
+          <li>Consistent environments reduced “works on staging but not prod” issues.</li>
+          <li>Faster onboarding for new engineers via documented, codified infrastructure.</li>
+        </ul>
+      </article>
+
+      <aside class="project-sidebar">
+        <div class="project-summary-card">
+          <h3>Project Snapshot</h3>
+          <ul>
+            <li><strong>Role:</strong> DevOps Engineer / IaC Lead</li>
+            <li><strong>Type:</strong> Infrastructure as Code</li>
+          </ul>
+        </div>
+
+        <div class="project-summary-card">
+          <h3>Technologies</h3>
+          <ul class="tech-list">
+            <li>Terraform</li>
+            <li>AWS (VPC, EC2, RDS, etc.)</li>
+            <li>Git / GitHub</li>
+            <li>Linux</li>
+            <li>Shell automation</li>
+          </ul>
+        </div>
+
+        <div class="project-summary-card">
+          <h3>Links</h3>
+          <ul>
+            <li>
+              <a href="https://github.com/lockersoft" target="_blank" rel="noopener">
+                GitHub Profile (lockersoft)
+              </a>
+            </li>
+            <li>
+              <a href="index.html#projects">Back to Project Overview</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <p>© <span id="year"></span> Dave Jones · Lockersoft LLC</p>
+    <p class="footer-links">
+      <a href="https://www.lockersoft.com" target="_blank" rel="noopener">lockersoft.com</a>
+      <span class="dot">•</span>
+      <a href="mailto:dave@lockersoft.com">dave@lockersoft.com</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>
