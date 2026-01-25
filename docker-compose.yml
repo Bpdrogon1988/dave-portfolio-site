@@ -1,0 +1,7 @@
+services:
+  web:
+    image: dave-portfolio-site
+    build:
+      context: .
+    ports:
+      - "8080:80"
