@@ -44,3 +44,32 @@ It also demonstrates my ability to:
 ## Live Website
 (https://bpdrogon1988.github.io/dave-portfolio-site/.)
 
+## Run Locally with Docker
+
+1. Build the image:
+   ```bash
+   docker build -t dave-portfolio-site .
+   ```
+2. Run the container:
+   ```bash
+   docker run --rm -p 8080:80 dave-portfolio-site
+   ```
+3. Open the site:
+   ```
+   http://localhost:8080
+   ```
+
+### Run Locally with Docker Compose
+
+1. Build and start the container:
+   ```bash
+   docker compose up --build
+   ```
+2. Open the site:
+   ```
+   http://localhost:8080
+   ```
+3. (Optional) Verify locally:
+   ```bash
+   curl -I http://localhost:8080
+   ```
