@@ -1,0 +1,293 @@
+/* DevOps-themed stylesheet for Dave Jones portfolio
+   Palette:
+     --devops-blue: primary platform color
+     --devops-teal: secondary / k8s-like
+     --devops-orange: accent (CI/CD, alerts)
+     --devops-purple: IaC / tooling accent
+     --devops-green: success / stable
+     neutrals for backgrounds and text
+*/
+
+:root{
+  --devops-blue: #0b6e99;      /* primary */
+  --devops-teal: #0aa3a3;      /* secondary */
+  --devops-orange: #f47c20;    /* accent */
+  --devops-purple: #7b4bd6;    /* IaC / tooling */
+  --devops-green: #2f9e44;     /* success */
+  --bg: #f6f8fa;
+  --panel: #ffffff;
+  --muted: #6b7280;
+  --text: #0f1724;
+  --glass: rgba(255,255,255,0.6);
+  --radius: 10px;
+  --shadow-sm: 0 1px 2px rgba(15,23,36,0.06);
+  --shadow-md: 0 6px 18px rgba(15,23,36,0.08);
+  --max-width: 1100px;
+  --focus-ring: 3px solid rgba(10,163,163,0.18);
+  --transition: 180ms cubic-bezier(.2,.9,.2,1);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  :root{
+    --bg: #071022;
+    --panel: #071828;
+    --muted: #9aa4b2;
+    --text: #e6eef6;
+    --glass: rgba(255,255,255,0.03);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.6);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.6);
+    --focus-ring: 3px solid rgba(11,110,153,0.16);
+  }
+}
+
+/* Page layout basics */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 75%, transparent) 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* Container utility */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:24px;
+}
+
+/* Header / nav */
+.site-header{
+  background: linear-gradient(90deg, rgba(11,110,153,0.12) 0%, rgba(10,163,163,0.06) 50%, rgba(244,124,32,0.04) 100%);
+  border-bottom: 1px solid rgba(15,23,36,0.04);
+  backdrop-filter: blur(6px);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+
+.nav-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* Brand */
+.brand-link{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  text-decoration:none;
+  color:inherit;
+}
+
+.brand-logo{
+  display:inline-flex;
+  width:56px;
+  height:56px;
+  border-radius:12px;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:white;
+  background: linear-gradient(135deg, var(--devops-blue), var(--devops-teal));
+  box-shadow: var(--shadow-sm);
+  font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+}
+
+.brand-name{display:block; font-weight:700}
+.brand-tagline{display:block; font-size:12px; color:var(--muted)}
+
+/* Nav */
+.nav{display:flex}
+.nav-links{display:flex; gap:8px; list-style:none; padding:0; margin:0; align-items:center}
+.nav-links a{
+  text-decoration:none;
+  color:var(--muted);
+  padding:8px 10px;
+  border-radius:8px;
+  transition: color var(--transition), background var(--transition), transform var(--transition);
+}
+.nav-links a:hover,
+.nav-links a:focus{
+  background:var(--glass);
+  color:var(--text);
+  transform:translateY(-1px);
+  outline:none;
+}
+.nav-divider{width:1px; height:28px; background: rgba(15,23,36,0.05); margin:0 8px;}
+
+/* Hamburger (mobile) */
+.nav-toggle{display:none; background:none; border:0; padding:8px; border-radius:8px}
+.nav-toggle:focus{outline:var(--focus-ring)}
+
+/* Hero */
+.hero{
+  padding:48px 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent 40%);
+}
+.hero-content{
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:32px;
+  align-items:start;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-content{grid-template-columns:1fr; padding-bottom:10px}
+  .nav{display:none}
+  .nav-toggle{display:inline-flex}
+}
+
+/* Hero text */
+.hero-text h1{
+  margin:0 0 12px 0;
+  font-size:clamp(1.8rem, 3.4vw, 2.4rem);
+  line-height:1.05;
+}
+.hero-text p{color:var(--muted); margin:0 0 18px}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  padding:10px 16px;
+  border-radius:8px;
+  font-weight:600;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  border:0;
+  cursor:pointer;
+}
+.btn-primary{
+  color:white;
+  background: linear-gradient(90deg, var(--devops-blue), var(--devops-teal));
+  box-shadow: 0 6px 20px rgba(10,163,163,0.12);
+}
+.btn-primary:hover{ transform:translateY(-2px); box-shadow: 0 8px 28px rgba(10,163,163,0.16) }
+.btn-primary:focus{ outline:var(--focus-ring) }
+
+.btn-secondary{
+  background: linear-gradient(90deg, rgba(244,124,32,0.12), rgba(123,75,214,0.08));
+  color:var(--text);
+  border:1px solid rgba(15,23,36,0.06);
+}
+.btn-secondary:hover{ transform:translateY(-2px) }
+.btn + .btn{ margin-left:12px }
+
+/* Hero meta */
+.hero-meta{ display:flex; gap:12px; margin-top:16px; flex-wrap:wrap; color:var(--muted); font-size:14px }
+.hero-meta a{ color:var(--devops-blue); text-decoration:none; font-weight:600 }
+
+/* Hero card / panel */
+.hero-panel{ display:flex; align-items:center; justify-content:center }
+.hero-card{
+  background:linear-gradient(180deg, var(--panel), color-mix(in srgb, var(--panel), transparent 8%));
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:var(--shadow-md);
+  border:1px solid rgba(15,23,36,0.04);
+}
+.hero-card h2{ margin-top:0; margin-bottom:8px }
+.hero-list{ padding-left:18px; margin:0 0 12px 0; color:var(--muted) }
+.hero-link{ color:var(--devops-purple); text-decoration:none; font-weight:600 }
+
+/* Skills chips */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px }
+.chip{
+  display:inline-block;
+  padding:6px 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+  border-radius:999px;
+  font-size:13px;
+  color:var(--text);
+  box-shadow: var(--shadow-sm);
+  border:1px solid rgba(15,23,36,0.04);
+}
+@media (prefers-color-scheme: dark){
+  .chip{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.03);
+  }
+}
+
+/* Projects grid */
+.section-header h2{ margin:0 0 6px 0 }
+.projects-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:20px;
+  margin-top:18px;
+}
+@media (max-width:980px){
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .projects-grid{grid-template-columns:1fr}
+}
+
+.project-card{
+  background:var(--panel);
+  border-radius:12px;
+  padding:18px;
+  box-shadow:var(--shadow-sm);
+  border-left:6px solid rgba(11,110,153,0.12);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.project-card h3{ margin-top:0; margin-bottom:8px }
+.project-card p{ color:var(--muted); margin:0 0 10px 0 }
+.project-card:hover{ transform:translateY(-6px); box-shadow: 0 18px 45px rgba(11,110,153,0.06) }
+.project-meta{ list-style:none; padding:0; margin:8px 0 12px; color:var(--muted) }
+.project-link{
+  text-decoration:none;
+  font-weight:700;
+  color:var(--devops-blue);
+  display:inline-block;
+  margin-top:6px;
+}
+
+/* Contact & social */
+.contact-list a, .social-links a{ color:var(--devops-blue); text-decoration:none; font-weight:600 }
+.contact-note{ color:var(--muted) }
+
+/* Footer */
+.site-footer{
+  padding:18px 0;
+  border-top:1px solid rgba(15,23,36,0.04);
+  margin-top:40px;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.02));
+}
+.footer-content{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.footer-links a{ color:var(--muted); text-decoration:none; margin-left:8px; font-weight:600 }
+
+/* Misc helpers */
+.section{ padding:36px 0; }
+.section-alt{ background: linear-gradient(180deg, rgba(11,110,153,0.02), transparent); padding-top:40px; padding-bottom:40px }
+.section-grid{ display:grid; grid-template-columns: 1fr 380px; gap:28px; }
+.contact-grid{ display:grid; grid-template-columns: 1fr 340px; gap:28px; }
+@media (max-width:900px){
+  .section-grid, .contact-grid{ grid-template-columns: 1fr; }
+}
+
+/* Accessibility: visible focus for interactive elements */
+a:focus, button:focus, .btn:focus { outline: none; box-shadow: var(--focus-ring) }
+
+/* Small UI flourishes */
+.dot{ margin:0 8px; color:var(--muted) }
+
+/* Color accents per project type (optional classes if you add them later) */
+.accent-ci { border-left-color: var(--devops-orange) }
+.accent-observ { border-left-color: var(--devops-teal) }
+.accent-iac { border-left-color: var(--devops-purple) }
+
+/* End of stylesheet */
