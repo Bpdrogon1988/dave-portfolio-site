@@ -1,75 +1,76 @@
 # Dave Portfolio Site
 
-This repository contains a simple portfolio website built for my assignment.
+This repository contains my portfolio website for class assignments.
 
-## Purpose of the Repository
-This repo stores the HTML and CSS files that make up the portfolio website.  
-It also demonstrates my ability to:
-- Create a GitHub repository
-- Upload project files
-- Use Git version control
-- Publish a website using GitHub Pages
+## Purpose
+This project shows that I can:
+- Build a static website with HTML, CSS, and JavaScript.
+- Use GitHub for version control.
+- Publish with GitHub Pages.
+- Deploy with GitHub Actions.
 
-## Git Workflow Steps I Followed
+## Previous Assignment Steps (Initial Website + Pages)
+1. Created a public GitHub repository named `dave-portfolio-site`.
+2. Prepared and verified project files (`index.html`, project pages, CSS, JS).
+3. Uploaded files to GitHub and committed changes.
+4. Enabled GitHub Pages in repository settings.
+5. Verified the live site URL.
 
-### 1. Created a GitHub Repository
-- Created the repo named `dave-portfolio-site`
-- Set it to public
+## Current Assignment Steps (GitHub Actions Deployment)
+1. Created `.github/workflows/deploy.yml`.
+2. Added GitHub’s official Pages actions:
+   - `actions/checkout@v4`
+   - `actions/configure-pages@v5`
+   - `actions/upload-pages-artifact@v3`
+   - `actions/deploy-pages@v4`
+3. Set workflow triggers:
+   - Push to `main`
+   - Manual run with `workflow_dispatch`
+4. Set required permissions:
+   - `contents: read`
+   - `pages: write`
+   - `id-token: write`
+5. Set concurrency group `pages` with `cancel-in-progress: false`.
+6. Set upload path to `./dave-portfolio-site` so only website files are published.
+7. In **Settings → Pages**, set **Source** to **GitHub Actions**.
 
-### 2. Prepared My Project Files
-- Extracted the ZIP folder on my computer
-- Verified the files: index.html, project pages, style.css
+## How to Trigger Deployment
+- **Automatic:** Push to `main`.
+- **Manual:** Actions tab → **Deploy static content to Pages** → **Run workflow**.
 
-### 3. Uploaded Files to GitHub
-- Clicked **Add file → Upload files**
-- Selected all files inside my project folder
-- Clicked **Commit changes**
+## Validation Checklist
+1. Commit and push changes.
+2. Confirm workflow success in the **Actions** tab.
+3. Open the GitHub Pages URL and verify updates.
 
-### 4. Enabled GitHub Pages
-- Went to **Settings → Pages**
-- Set source to **main branch** and **root folder /**
-- Saved the settings
-- GitHub returned a live site URL
-
-### 5. Challenges I Faced
-- Confusion with ZIP vs extracted folder
-- Uploading files individually
-- Navigating GitHub interface
-
-### 6. How I Solved Them
-- Extracted the ZIP properly before uploading
-- Dragged all files into GitHub’s upload window
-- Followed step-by-step instructions to enable Pages
+## Challenges and Fixes
+- **Branch mismatch (`master` vs `main`)** → Set workflow trigger to `main`.
+- **Avoid publishing non-site files** → Upload only `./dave-portfolio-site`.
+- **Pages source not in code** → Set it in GitHub UI under **Settings → Pages**.
 
 ## Live Website
-(https://bpdrogon1988.github.io/dave-portfolio-site/.)
+https://bpdrogon1988.github.io/dave-portfolio-site/
 
 ## Run Locally with Docker
-
-1. Build the image:
+1. Build image:
    ```bash
    docker build -t dave-portfolio-site .
    ```
-2. Run the container:
+2. Run container:
    ```bash
    docker run --rm -p 8080:80 dave-portfolio-site
    ```
-3. Open the site:
-   ```
-   http://localhost:8080
-   ```
+3. Open:
+   `http://localhost:8080`
 
-### Run Locally with Docker Compose
-
-1. Build and start the container:
+## Run Locally with Docker Compose
+1. Start:
    ```bash
    docker compose up --build
    ```
-2. Open the site:
-   ```
-   http://localhost:8080
-   ```
-3. (Optional) Verify locally:
+2. Open:
+   `http://localhost:8080`
+3. Optional check:
    ```bash
    curl -I http://localhost:8080
    ```
